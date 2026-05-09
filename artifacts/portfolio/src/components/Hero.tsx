@@ -37,12 +37,14 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center pt-20"
     >
-      {/* Background Blobs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full animate-blob -z-10" />
-      <div className="absolute top-40 right-20 w-96 h-96 bg-blue-600/20 blur-3xl rounded-full animate-blob animation-delay-2000 -z-10" />
-      <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-purple-600/15 blur-3xl rounded-full animate-blob animation-delay-4000 -z-10" />
+      {/* Background Blobs — contained so they don't overflow the section */}
+      <div className="absolute inset-0 overflow-hidden -z-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full animate-blob" />
+        <div className="absolute top-40 right-20 w-96 h-96 bg-blue-600/20 blur-3xl rounded-full animate-blob animation-delay-2000" />
+        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-purple-600/15 blur-3xl rounded-full animate-blob animation-delay-4000" />
+      </div>
 
       <div className="container mx-auto px-4 md:px-6 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
