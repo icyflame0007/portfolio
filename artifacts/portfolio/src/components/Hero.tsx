@@ -55,7 +55,7 @@ export function Hero() {
           >
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-sm font-medium text-cyan-400">Available for Opportunities</span>
+              <span className="text-sm font-medium text-cyan-400">Available for Full Time & Freelance Opportunities</span>
             </motion.div>
 
             <motion.div variants={itemVariants} className="mb-2">
@@ -115,19 +115,29 @@ export function Hero() {
                 Contact Me
               </Button>
               <div className="flex items-center gap-2 ml-2">
-                <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10" asChild data-testid="link-mail">
-                  <a href="mailto:nagasantosh.akula@gmail.com"><Mail className="h-5 w-5 text-cyan-400" /></a>
-                </Button>
-                <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10" asChild data-testid="link-linkedin">
-                  <a href="https://www.linkedin.com/in/santosh-a-b48121245" target="_blank" rel="noreferrer"><Linkedin className="h-5 w-5 text-cyan-400" /></a>
-                </Button>
+                <a
+                  href="mailto:nagasantosh.akula@gmail.com"
+                  data-testid="link-mail"
+                  className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors"
+                >
+                  <Mail className="h-5 w-5 text-cyan-400" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/santosh-a-b48121245"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-testid="link-linkedin"
+                  className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors"
+                >
+                  <Linkedin className="h-5 w-5 text-cyan-400" />
+                </a>
               </div>
             </motion.div>
           </motion.div>
 
           {/* Right Avatar Content */}
           <motion.div
-            className="lg:col-span-5 relative flex justify-center items-center mt-12 lg:mt-0"
+            className="lg:col-span-5 relative flex justify-center items-center mt-12 lg:mt-0 pb-10 lg:pb-0"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}

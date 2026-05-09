@@ -16,7 +16,7 @@ export function Contact() {
     e.preventDefault();
     const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
     const body = encodeURIComponent(`Hi Santosh,\n\n${message}\n\nBest regards,\n${name}\n${email}`);
-    window.open(`mailto:nagasantosh.akula@gmail.com?subject=${subject}&body=${body}`, "_blank");
+    window.location.href = `mailto:nagasantosh.akula@gmail.com?subject=${subject}&body=${body}`;
     toast({
       title: "Opening your email client",
       description: "Your message is ready to send via your email app.",
