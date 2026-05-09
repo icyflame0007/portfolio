@@ -6,10 +6,10 @@ import { Download, Mail, Linkedin, ChevronDown } from "lucide-react";
 export function Hero() {
   const [subtitleIndex, setSubtitleIndex] = useState(0);
   const subtitles = [
-    "SAP Ariba SLP Specialist",
+    "SAP Ariba SLP & Sourcing Specialist",
     "Source-to-Pay Expert",
     "SAP S/4HANA Integration",
-    "Procurement Automation Expert",
+    "Procurement Expert",
   ];
 
   useEffect(() => {
