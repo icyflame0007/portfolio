@@ -137,7 +137,7 @@ export function Hero() {
 
           {/* Right Avatar Content */}
           <motion.div
-            className="lg:col-span-5 relative flex justify-center items-center mt-12 lg:mt-0 pb-10 lg:pb-0"
+            className="lg:col-span-5 relative flex justify-center items-center mt-12 lg:mt-0 pb-20 lg:pb-0"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
