@@ -1,0 +1,188 @@
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Download, Mail, Linkedin, ChevronDown } from "lucide-react";
+
+export function Hero() {
+  const [subtitleIndex, setSubtitleIndex] = useState(0);
+  const subtitles = [
+    "SAP Ariba SLP Specialist",
+    "Source-to-Pay Expert",
+    "SAP S/4HANA Integration",
+    "Procurement Automation Expert",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSubtitleIndex((prev) => (prev + 1) % subtitles.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  return (
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+    >
+      {/* Background Blobs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full animate-blob -z-10" />
+      <div className="absolute top-40 right-20 w-96 h-96 bg-blue-600/20 blur-3xl rounded-full animate-blob animation-delay-2000 -z-10" />
+      <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-purple-600/15 blur-3xl rounded-full animate-blob animation-delay-4000 -z-10" />
+
+      <div className="container mx-auto px-4 md:px-6 z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Content */}
+          <motion.div
+            className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-sm font-medium text-cyan-400">Available for Opportunities</span>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="mb-2">
+              <span className="text-cyan-500 font-semibold tracking-wider uppercase text-sm">
+                SAP Ariba & MM Consultant
+              </span>
+            </motion.div>
+
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 font-sans tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-600"
+              style={{ fontFamily: 'var(--app-font-sans)' }} // Enforce sans here
+            >
+              Santosh Akula
+            </motion.h1>
+
+            <motion.div variants={itemVariants} className="h-8 md:h-10 mb-6 relative w-full overflow-hidden flex justify-center lg:justify-start">
+              {subtitles.map((subtitle, idx) => (
+                <motion.h2
+                  key={subtitle}
+                  className="text-xl md:text-2xl font-medium text-muted-foreground absolute"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{
+                    opacity: subtitleIndex === idx ? 1 : 0,
+                    y: subtitleIndex === idx ? 0 : -20,
+                  }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {subtitle}
+                </motion.h2>
+              ))}
+            </motion.div>
+
+            <motion.p
+              variants={itemVariants}
+              className="text-lg text-muted-foreground mb-8 max-w-xl"
+            >
+              Driving enterprise procurement transformation through SAP Ariba SLP, Sourcing, SAP MM, and S/4HANA integration expertise.
+            </motion.p>
+
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 justify-center lg:justify-start">
+              <Button
+                className="bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all rounded-full px-6 py-6"
+                data-testid="button-download-resume"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download Resume
+              </Button>
+              <Button
+                variant="outline"
+                className="border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 rounded-full px-6 py-6 glass-card"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                data-testid="button-contact-me"
+              >
+                Contact Me
+              </Button>
+              <div className="flex items-center gap-2 ml-2">
+                <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10" asChild data-testid="link-mail">
+                  <a href="mailto:santoshakula2002@gmail.com"><Mail className="h-5 w-5 text-cyan-400" /></a>
+                </Button>
+                <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10" asChild data-testid="link-linkedin">
+                  <a href="https://linkedin.com/in/santosh-akula-91a069226" target="_blank" rel="noreferrer"><Linkedin className="h-5 w-5 text-cyan-400" /></a>
+                </Button>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Avatar Content */}
+          <motion.div
+            className="lg:col-span-5 relative flex justify-center items-center mt-12 lg:mt-0"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            {/* Pulsing ring */}
+            <div className="absolute w-56 h-56 lg:w-72 lg:h-72 bg-cyan-500/20 rounded-full animate-ping opacity-20" />
+            
+            {/* Orbital ring */}
+            <div className="absolute w-64 h-64 lg:w-80 lg:h-80 border-2 border-dashed border-cyan-400/40 rounded-full animate-[spin_20s_linear_infinite]" />
+
+            {/* Avatar Circle */}
+            <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-600 shadow-[0_0_40px_rgba(6,182,212,0.5)] flex items-center justify-center z-10">
+              <span className="text-white font-bold text-5xl lg:text-7xl font-sans tracking-tight">SA</span>
+            </div>
+
+            {/* Floating Badges */}
+            <motion.div 
+              className="absolute top-0 right-4 lg:right-10 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-xs font-semibold text-cyan-300 z-20"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+            >
+              SAP Ariba
+            </motion.div>
+            <motion.div 
+              className="absolute bottom-10 left-0 lg:left-4 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-xs font-semibold text-blue-300 z-20"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
+            >
+              S/4HANA
+            </motion.div>
+            <motion.div 
+              className="absolute top-20 left-0 lg:-left-4 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-xs font-semibold text-purple-300 z-20"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
+            >
+              SAP MM
+            </motion.div>
+            <motion.div 
+              className="absolute bottom-4 right-4 lg:right-10 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-xs font-semibold text-green-300 z-20"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 1.5 }}
+            >
+              CIG
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+      >
+        <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
+        <ChevronDown className="w-5 h-5 text-cyan-500 animate-bounce" />
+      </motion.div>
+    </section>
+  );
+}
