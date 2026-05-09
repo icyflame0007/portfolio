@@ -97,13 +97,15 @@ export function Hero() {
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-              <Button
-                className="bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all rounded-full px-6 py-6"
-                data-testid="button-download-resume"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
-              </Button>
+              <a href="/Santosh_Akula_Resume.pdf" download="Santosh_Akula_Resume.pdf" data-testid="link-download-resume-hero">
+                <Button
+                  className="bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all rounded-full px-6 py-6"
+                  data-testid="button-download-resume"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Resume
+                </Button>
+              </a>
               <Button
                 variant="outline"
                 className="border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 rounded-full px-6 py-6 glass-card"
@@ -114,7 +116,7 @@ export function Hero() {
               </Button>
               <div className="flex items-center gap-2 ml-2">
                 <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10" asChild data-testid="link-mail">
-                  <a href="mailto:santoshakula2002@gmail.com"><Mail className="h-5 w-5 text-cyan-400" /></a>
+                  <a href="mailto:nagasantosh.akula@gmail.com"><Mail className="h-5 w-5 text-cyan-400" /></a>
                 </Button>
                 <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10" asChild data-testid="link-linkedin">
                   <a href="https://linkedin.com/in/santosh-akula-91a069226" target="_blank" rel="noreferrer"><Linkedin className="h-5 w-5 text-cyan-400" /></a>
@@ -142,33 +144,40 @@ export function Hero() {
             </div>
 
             {/* Floating Badges */}
-            <motion.div 
-              className="absolute top-0 right-4 lg:right-10 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-xs font-semibold text-cyan-300 z-20"
+            <motion.div
+              className="absolute -top-4 right-2 lg:right-6 px-3 py-1.5 bg-black/70 backdrop-blur-md border border-cyan-500/30 rounded-full text-xs font-semibold text-cyan-300 z-20 shadow-[0_0_10px_rgba(6,182,212,0.2)]"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
             >
-              SAP Ariba
+              SAP Ariba SLP
             </motion.div>
-            <motion.div 
-              className="absolute bottom-10 left-0 lg:left-4 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-xs font-semibold text-blue-300 z-20"
+            <motion.div
+              className="absolute top-8 -right-2 lg:-right-6 px-3 py-1.5 bg-black/70 backdrop-blur-md border border-blue-500/30 rounded-full text-xs font-semibold text-blue-300 z-20 shadow-[0_0_10px_rgba(59,130,246,0.2)]"
               animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
+              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.8 }}
             >
-              S/4HANA
+              SAP Ariba Sourcing
             </motion.div>
-            <motion.div 
-              className="absolute top-20 left-0 lg:-left-4 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-xs font-semibold text-purple-300 z-20"
+            <motion.div
+              className="absolute bottom-8 left-0 lg:-left-6 px-3 py-1.5 bg-black/70 backdrop-blur-md border border-purple-500/30 rounded-full text-xs font-semibold text-purple-300 z-20 shadow-[0_0_10px_rgba(168,85,247,0.2)]"
               animate={{ y: [0, -8, 0] }}
-              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0.5 }}
             >
               SAP MM
             </motion.div>
-            <motion.div 
-              className="absolute bottom-4 right-4 lg:right-10 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-xs font-semibold text-green-300 z-20"
+            <motion.div
+              className="absolute -bottom-4 right-4 lg:right-8 px-3 py-1.5 bg-black/70 backdrop-blur-md border border-green-500/30 rounded-full text-xs font-semibold text-green-300 z-20 shadow-[0_0_10px_rgba(34,197,94,0.2)]"
               animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 1.5 }}
             >
-              CIG
+              S/4HANA
+            </motion.div>
+            <motion.div
+              className="absolute top-1/2 -left-2 lg:-left-8 -translate-y-1/2 px-3 py-1.5 bg-black/70 backdrop-blur-md border border-amber-500/30 rounded-full text-xs font-semibold text-amber-300 z-20 shadow-[0_0_10px_rgba(245,158,11,0.2)]"
+              animate={{ x: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 3.8, ease: "easeInOut", delay: 1 }}
+            >
+              CIG Integration
             </motion.div>
           </motion.div>
         </div>

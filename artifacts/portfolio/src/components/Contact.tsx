@@ -36,11 +36,11 @@ export function Contact() {
                 </p>
 
                 <div className="space-y-6">
-                  <a href="mailto:santoshakula2002@gmail.com" className="flex items-center gap-4 text-muted-foreground hover:text-cyan-400 transition-colors group">
+                  <a href="mailto:nagasantosh.akula@gmail.com" className="flex items-center gap-4 text-muted-foreground hover:text-cyan-400 transition-colors group">
                     <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
                       <Mail className="w-5 h-5" />
                     </div>
-                    <span className="font-medium">santoshakula2002@gmail.com</span>
+                    <span className="font-medium">nagasantosh.akula@gmail.com</span>
                   </a>
 
                   <a href="https://linkedin.com/in/santosh-akula-91a069226" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-cyan-400 transition-colors group">
@@ -54,7 +54,7 @@ export function Contact() {
                     <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">
                       <Phone className="w-5 h-5" />
                     </div>
-                    <span className="font-medium">+91 9502286327</span>
+                    <span className="font-medium">+91 8374187277</span>
                   </div>
 
                   <div className="flex items-center gap-4 text-muted-foreground">
@@ -67,10 +67,12 @@ export function Contact() {
               </div>
 
               <div className="mt-12 pt-8 border-t border-white/10">
-                <Button className="w-full bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)]">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Complete Resume
-                </Button>
+                <a href="/Santosh_Akula_Resume.pdf" download="Santosh_Akula_Resume.pdf" data-testid="link-download-resume-contact">
+                  <Button className="w-full bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                    <Download className="w-4 h-4 mr-2" />
+                    Download Resume
+                  </Button>
+                </a>
               </div>
             </div>
           </AnimatedSection>
