@@ -1,14 +1,14 @@
 import { AnimatedSection } from "./AnimatedSection";
-import { Server, Settings, Database, Activity, Users, ShieldCheck, BookOpen, Clock } from "lucide-react";
+import { Server, Search, Database, Activity, Users, ShieldCheck, BookOpen, Clock } from "lucide-react";
 
 export function About() {
   const metrics = [
     { icon: <ShieldCheck className="w-6 h-6 text-cyan-400" />, title: "SAP Ariba SLP", desc: "Supplier Lifecycle & Performance" },
     { icon: <Database className="w-6 h-6 text-blue-400" />, title: "SAP MM / P2P", desc: "Procure-to-Pay Workflows" },
+    { icon: <Search className="w-6 h-6 text-teal-400" />, title: "SAP Ariba Sourcing", desc: "RFP, RFQ & Sourcing Events" },
     { icon: <Server className="w-6 h-6 text-purple-400" />, title: "SAP S/4HANA", desc: "Enterprise ERP Integration" },
     { icon: <Activity className="w-6 h-6 text-green-400" />, title: "CIG Integration", desc: "Cloud Integration Gateway" },
     { icon: <Users className="w-6 h-6 text-amber-400" />, title: "Supplier Lifecycle Mgmt", desc: "Qualification & Onboarding" },
-    { icon: <Settings className="w-6 h-6 text-rose-400" />, title: "Workflow Automation", desc: "Multi-level Approval Flows" },
     { icon: <BookOpen className="w-6 h-6 text-indigo-400" />, title: "User Trainings", desc: "End-user Enablement" },
     { icon: <Clock className="w-6 h-6 text-emerald-400" />, title: "UAT & Hypercare", desc: "Go-live Support" },
   ];

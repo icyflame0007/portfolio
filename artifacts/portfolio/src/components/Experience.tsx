@@ -3,8 +3,9 @@ import { CheckCircle2 } from "lucide-react";
 
 export function Experience() {
   const points = [
-    "Led SAP Ariba SLP & Sourcing implementation — supplier onboarding, qualification questionnaires",
-    "Configured multi-level approval workflows for supplier qualification and sourcing events",
+    "Implemented and configured SAP Ariba SLP and Sourcing modules covering supplier onboarding, registration questionnaires, approval workflows, and event templates aligned with client procurement processes.",
+    "Configured supplier registration and qualification questionnaires and RFx event template configuration for sourcing events.",
+    "Implemented Supplier Performance Management templates for structured supplier evaluation.",
     "Supported SAP MM Procure-to-Pay (P2P) — PR to PO to MIRO workflows",
     "Troubleshot Ariba-S/4HANA integration — XML payload analysis, CIG monitoring",
     "Performed Business Partner replication validation between SAP S/4HANA and SAP Ariba",

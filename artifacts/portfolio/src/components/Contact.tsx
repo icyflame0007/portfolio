@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AnimatedSection } from "./AnimatedSection";
 import { Mail, Linkedin, Phone, MapPin, Download, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,14 +8,22 @@ import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
   const { toast } = useToast();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body = encodeURIComponent(`Hi Santosh,\n\n${message}\n\nBest regards,\n${name}\n${email}`);
+    window.open(`mailto:nagasantosh.akula@gmail.com?subject=${subject}&body=${body}`, "_blank");
     toast({
-      title: "Message Sent",
-      description: "Thank you for reaching out! I'll get back to you soon.",
+      title: "Opening your email client",
+      description: "Your message is ready to send via your email app.",
     });
-    (e.target as HTMLFormElement).reset();
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
@@ -43,11 +52,11 @@ export function Contact() {
                     <span className="font-medium">nagasantosh.akula@gmail.com</span>
                   </a>
 
-                  <a href="https://linkedin.com/in/santosh-akula-91a069226" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-cyan-400 transition-colors group">
+                  <a href="https://www.linkedin.com/in/santosh-a-b48121245" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-cyan-400 transition-colors group">
                     <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
                       <Linkedin className="w-5 h-5" />
                     </div>
-                    <span className="font-medium">linkedin.com/in/santosh-akula-91a069226</span>
+                    <span className="font-medium">linkedin.com/in/santosh-a-b48121245</span>
                   </a>
 
                   <div className="flex items-center gap-4 text-muted-foreground">
@@ -84,15 +93,15 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium text-muted-foreground">Your Name</label>
-                  <Input id="name" required placeholder="John Doe" className="bg-black/20 border-white/10 focus:border-cyan-500" />
+                  <Input id="name" required placeholder="John Doe" value={name} onChange={(e) => setName(e.target.value)} className="bg-black/20 border-white/10 focus:border-cyan-500" data-testid="input-name" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-muted-foreground">Your Email</label>
-                  <Input id="email" type="email" required placeholder="john@example.com" className="bg-black/20 border-white/10 focus:border-cyan-500" />
+                  <Input id="email" type="email" required placeholder="john@example.com" value={email} onChange={(e) => setEmail(e.target.value)} className="bg-black/20 border-white/10 focus:border-cyan-500" data-testid="input-email" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium text-muted-foreground">Message</label>
-                  <Textarea id="message" required placeholder="Hello, I'd like to discuss..." className="min-h-[150px] bg-black/20 border-white/10 focus:border-cyan-500 resize-none" />
+                  <Textarea id="message" required placeholder="Hello, I'd like to discuss..." value={message} onChange={(e) => setMessage(e.target.value)} className="min-h-[150px] bg-black/20 border-white/10 focus:border-cyan-500 resize-none" data-testid="textarea-message" />
                 </div>
                 <Button type="submit" className="w-full bg-white text-black hover:bg-gray-200">
                   <Send className="w-4 h-4 mr-2" />

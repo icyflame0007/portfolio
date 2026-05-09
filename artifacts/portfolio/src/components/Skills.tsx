@@ -1,38 +1,7 @@
 import { AnimatedSection } from "./AnimatedSection";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-
-const SkillBar = ({ name, percent, delay }: { name: string, percent: number, delay: number }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <div className="mb-6" ref={ref}>
-      <div className="flex justify-between mb-2">
-        <span className="font-medium">{name}</span>
-        <span className="text-cyan-400 font-mono text-sm">{percent}%</span>
-      </div>
-      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-        <motion.div
-          className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"
-          initial={{ width: 0 }}
-          animate={isInView ? { width: `${percent}%` } : { width: 0 }}
-          transition={{ duration: 1, delay, ease: "easeOut" }}
-        />
-      </div>
-    </div>
-  );
-};
+import { motion } from "framer-motion";
 
 export function Skills() {
-  const coreSkills = [
-    { name: "SAP Ariba SLP / Sourcing", percent: 92 },
-    { name: "Source-to-Pay (P2P)", percent: 88 },
-    { name: "SAP MM", percent: 85 },
-    { name: "SAP S/4HANA", percent: 80 },
-    { name: "CIG Integration", percent: 78 },
-  ];
-
   const categories = [
     {
       title: "SAP Functional",
@@ -60,18 +29,11 @@ export function Skills() {
           <div className="w-20 h-1.5 bg-cyan-500 rounded-full" />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <AnimatedSection delay={0.2} className="glass-card p-8 rounded-2xl">
-            <h3 className="text-xl font-bold mb-8 text-foreground">Core Proficiency</h3>
-            {coreSkills.map((skill, idx) => (
-              <SkillBar key={idx} name={skill.name} percent={skill.percent} delay={0.3 + (idx * 0.1)} />
-            ))}
-          </AnimatedSection>
-
-          <div className="space-y-8">
-            {categories.map((cat, idx) => (
-              <AnimatedSection key={idx} delay={0.4 + (idx * 0.1)}>
-                <h3 className="text-lg font-semibold mb-4 text-muted-foreground">{cat.title}</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {categories.map((cat, idx) => (
+            <AnimatedSection key={idx} delay={0.2 + (idx * 0.1)}>
+              <div className="glass-card p-6 rounded-2xl h-full">
+                <h3 className="text-lg font-semibold mb-4 text-cyan-400 border-b border-white/10 pb-3">{cat.title}</h3>
                 <div className="flex flex-wrap gap-3">
                   {cat.tags.map((tag, i) => (
                     <motion.span
@@ -83,9 +45,9 @@ export function Skills() {
                     </motion.span>
                   ))}
                 </div>
-              </AnimatedSection>
-            ))}
-          </div>
+              </div>
+            </AnimatedSection>
+          ))}
         </div>
       </div>
     </section>

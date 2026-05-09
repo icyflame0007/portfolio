@@ -119,7 +119,7 @@ export function Hero() {
                   <a href="mailto:nagasantosh.akula@gmail.com"><Mail className="h-5 w-5 text-cyan-400" /></a>
                 </Button>
                 <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10" asChild data-testid="link-linkedin">
-                  <a href="https://linkedin.com/in/santosh-akula-91a069226" target="_blank" rel="noreferrer"><Linkedin className="h-5 w-5 text-cyan-400" /></a>
+                  <a href="https://www.linkedin.com/in/santosh-a-b48121245" target="_blank" rel="noreferrer"><Linkedin className="h-5 w-5 text-cyan-400" /></a>
                 </Button>
               </div>
             </motion.div>
