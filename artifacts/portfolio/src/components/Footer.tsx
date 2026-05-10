@@ -17,8 +17,8 @@ export function Footer() {
               { label: 'Experience', id: 'experience' },
               { label: 'Projects', id: 'projects' },
               { label: 'Skills', id: 'skills' },
-              { label: 'Education', id: 'education' },
               { label: 'Achievements', id: 'achievements' },
+              { label: 'Education', id: 'education' },
               { label: 'Contact', id: 'contact' },
             ].map((item) => (
               <a
