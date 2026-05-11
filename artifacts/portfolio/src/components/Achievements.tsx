@@ -60,7 +60,7 @@ export function Achievements() {
                     (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
                   }}
                 >
-                  <div className="absolute top-4 right-4 opacity-10">
+                  <div className={`absolute top-4 right-4 opacity-10 ${item.textColor}`}>
                     <Star className="w-20 h-20 fill-current" />
                   </div>
                   <div className={`w-14 h-14 rounded-2xl ${item.bgColor} flex items-center justify-center mb-5 border border-white/10`}>
