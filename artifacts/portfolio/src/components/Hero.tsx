@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Linkedin, ChevronDown } from "lucide-react";
-import profilePic from "@assets/LinkedIn_Profile_Pic_1778420368603.jpg";
+
 
 export function Hero() {
   const [subtitleIndex, setSubtitleIndex] = useState(0);
@@ -152,12 +152,8 @@ export function Hero() {
             <div className="absolute w-64 h-64 lg:w-80 lg:h-80 border-2 border-dashed border-cyan-400/40 rounded-full animate-[spin_20s_linear_infinite]" />
 
             {/* Avatar Circle */}
-            <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full shadow-[0_0_40px_rgba(6,182,212,0.5)] z-10 overflow-hidden ring-4 ring-cyan-500/40">
-              <img
-                src={profilePic}
-                alt="Santosh Akula"
-                className="w-full h-full object-cover object-top"
-              />
+            <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-600 shadow-[0_0_40px_rgba(6,182,212,0.5)] flex items-center justify-center z-10">
+              <span className="text-white font-bold text-5xl lg:text-7xl tracking-tight">SA</span>
             </div>
 
             {/* Floating Badges */}

@@ -93,17 +93,17 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium text-muted-foreground">Your Name</label>
-                  <Input id="name" required placeholder="John Doe" value={name} onChange={(e) => setName(e.target.value)} className="bg-black/20 border-white/10 focus:border-cyan-500" data-testid="input-name" />
+                  <Input id="name" required placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} className="bg-black/20 border-white/10 focus:border-cyan-500" data-testid="input-name" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-muted-foreground">Your Email</label>
-                  <Input id="email" type="email" required placeholder="john@example.com" value={email} onChange={(e) => setEmail(e.target.value)} className="bg-black/20 border-white/10 focus:border-cyan-500" data-testid="input-email" />
+                  <Input id="email" type="email" required placeholder="Your email" value={email} onChange={(e) => setEmail(e.target.value)} className="bg-black/20 border-white/10 focus:border-cyan-500" data-testid="input-email" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium text-muted-foreground">Message</label>
                   <Textarea id="message" required placeholder="Hello, I'd like to discuss..." value={message} onChange={(e) => setMessage(e.target.value)} className="min-h-[150px] bg-black/20 border-white/10 focus:border-cyan-500 resize-none" data-testid="textarea-message" />
                 </div>
-                <Button type="submit" className="w-full bg-white text-black hover:bg-gray-200">
+                <Button type="submit" className="w-full bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)]">
                   <Send className="w-4 h-4 mr-2" />
                   Send Message
                 </Button>

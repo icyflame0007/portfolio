@@ -61,7 +61,7 @@ export function Achievements() {
                   }}
                 >
                   <div className="absolute top-4 right-4 opacity-10">
-                    <Star className="w-20 h-20" />
+                    <Star className="w-20 h-20 fill-current" />
                   </div>
                   <div className={`w-14 h-14 rounded-2xl ${item.bgColor} flex items-center justify-center mb-5 border border-white/10`}>
                     <Icon className={`w-7 h-7 ${item.textColor}`} />

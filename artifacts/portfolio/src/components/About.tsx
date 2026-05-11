@@ -22,7 +22,7 @@ export function About() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          <AnimatedSection delay={0.2} className="flex items-center">
+          <AnimatedSection delay={0.2} className="flex items-start">
             <p className="text-lg leading-relaxed text-muted-foreground">
               Experienced SAP Ariba & MM Consultant with hands-on expertise in Source-to-Pay processes, SAP Ariba SLP & Sourcing implementations, SAP S/4HANA integration, and procurement workflow optimization. Currently contributing to enterprise-level implementations at Tech Mahindra, with a proven track record of delivering end-to-end SAP solutions, conducting user trainings, troubleshooting complex integrations, and supporting UAT & Hypercare phases.
             </p>
