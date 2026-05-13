@@ -1,4 +1,10 @@
+[build]
+  command = "pnpm --filter @workspace/portfolio build"
+  publish = "artifacts/portfolio/dist/public"
+
+## SPA-style routing: send all paths to index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
