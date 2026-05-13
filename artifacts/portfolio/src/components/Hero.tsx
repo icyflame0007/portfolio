@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Linkedin, ChevronDown } from "lucide-react";
-
 
 export function Hero() {
   const [subtitleIndex, setSubtitleIndex] = useState(0);
@@ -30,9 +29,13 @@ export function Hero() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    },
   };
 
   return (
@@ -153,7 +156,7 @@ export function Hero() {
 
             {/* Avatar Circle */}
             <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-600 shadow-[0_0_40px_rgba(6,182,212,0.5)] flex items-center justify-center z-10">
-              <span className="text-white font-bold text-5xl lg:text-7xl tracking-tight">SA</span>
+              <span className="text-white font-bold text-5xl lg:text-7xl font-sans tracking-tight">SA</span>
             </div>
 
             {/* Floating Badges */}
